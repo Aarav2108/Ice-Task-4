@@ -32,6 +32,28 @@ public class IceTask4 {
        String inputFile = "accounts.txt";
         String outputFile = "valid_accounts.txt";
         
-        
+         try (Scanner in = new Scanner(new File(inputFile));
+             PrintWriter out = new PrintWriter(new FileWriter(outputFile))) {
+ 
+            while (in.hasNextLine()) {
+                String account = in.nextLine().trim();
+                if (account.isEmpty()) {
+                    continue; 
+                }
+ 
+                if (isValid(account)) {
+                    System.out.println(account + " is valid");
+                    out.println(account);
+                } else {
+                    System.out.println(account + " is invalid");
+                }
+            }
+            System.out.println("Valid account numbers written to " + outputFile);
+ 
+        } catch (FileNotFoundException e) {
+            System.out.println("Input file not found: " + inputFile);
+        } catch (IOException e) {
+            System.out.println("Error writing output file: " + e.getMessage());
+        }
     }
 }
