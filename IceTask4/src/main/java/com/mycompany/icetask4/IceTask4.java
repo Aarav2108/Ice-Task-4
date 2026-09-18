@@ -37,9 +37,7 @@ public class IceTask4 {
  
             while (in.hasNextLine()) {
                 String account = in.nextLine().trim();
-                if (account.isEmpty()) {
-                    continue; 
-                }
+                if (account.isEmpty()) 
  
                 if (isValid(account)) {
                     System.out.println(account + " is valid");
