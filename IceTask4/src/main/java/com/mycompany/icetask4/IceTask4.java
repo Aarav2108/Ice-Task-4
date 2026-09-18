@@ -29,6 +29,9 @@ public class IceTask4 {
     
 
     public static void main(String[] args) {
-       
+       String inputFile = "accounts.txt";
+        String outputFile = "valid_accounts.txt";
+        
+        
     }
 }
